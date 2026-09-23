@@ -1,18 +1,18 @@
 # Cart Quest 🛒🎮
 
-This project was created for FALL HACKS 2025 as a themed hackathon build.
-The concept was a fusion of two very different ideas: food delivery and
-video games. We combined the excitement of a game quest with the everyday
-experience of ordering a meal, turning grocery shopping into a playful
-challenge where users collect ingredients to complete a recipe before
-checking out.
+This project was started during FALL HACKS 2025 as a themed hackathon build,
+but it was completed in this repository. The concept was a fusion of two
+very different ideas: food delivery and video games. We combined the
+excitement of a game quest with the everyday experience of ordering a meal,
+turning grocery shopping into a playful challenge where users collect
+ingredients to complete a recipe before checking out.
 
 Cart Quest is a gamified shopping and food-delivery experience: pick a
 cuisine and a dish, then hunt down every ingredient in a virtual grocery
 store before you check out. No backend — everything runs in the browser.
 
-This project is complete and lives in a different repository, but it is
-derived from the original project at https://github.com/iba21-04/CartQuest.
+This project was originally started for Hackathon which can be found here
+https://github.com/iba21-04/CartQuest, but it completed in this repo.
 
 ## How to run it
 
