@@ -1,0 +1,150 @@
+/* General body styling */
+body {
+  margin: 0;
+  font-family: 'Trebuchet MS', sans-serif;
+  background: white;
+  color: #2a2a7a;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 10px 40px;
+  border-bottom: 1px solid #eee;
+  width: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo img {
+  height: 50px;
+  margin-right: 10px;
+}
+.logo span {
+  font-size: 14px;
+  color: #333;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #2a2a7a;
+  font-size: 18px;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+
+.header-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header-buttons button {
+  margin-left: 10px;
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: orange;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  color: 2a2a7a;
+  font-weight: bold;
+}
+.header-buttons button:hover {
+  background-color: darkorange;
+}
+
+/* Main section */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* move content to top */
+  width: 100%;
+  padding-top: 60px;           /* add space from top */
+}
+
+main h1 {
+  font-size: 70px;         /* increase size by 2 steps */
+  font-weight: bold;       /* make bold */
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: center;
+  margin-top: -80px;       /* move heading up by 1 line */
+}
+
+main .start-btn {
+  padding: 15px 40px;
+  font-size: 20px;
+  background-color: orange;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  color: blue;
+  font-weight: bold;
+  margin-bottom: 30px;
+  margin-top: 0;
+  display: block;
+}
+main .start-btn:hover {
+  background-color: darkorange;
+}
+
+/* Tagline box */
+.tagline {
+  font-size: 16px;
+  border: 2px solid gold;
+  display: inline-block;
+  padding: 15px 25px;
+  color: #2a2a7a;
+  font-weight: bold;
+  margin-top: 0;
+  text-align: center;
+}
+
+/* Fake button for demonstration */
+.fake-btn {
+  padding: 30px 20px;
+  font-size: 44px;
+  background-color: rgb(21, 22, 81);
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 30px;
+  margin-top: 0;
+  display: block;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  cursor: default;
+  text-align: center;
+  user-select: none;
+}
+
+.vertical-box {
+  margin-top: 40px; /* more space between fake button and first button */
+  padding: 30px 20px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  border: 2px solid navy; /* outlined box */
+}

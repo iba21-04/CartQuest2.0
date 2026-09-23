@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Quest - Feedback</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1f1f1f 100%);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 60px 20px;
+        }
+
+        header {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            color: #ff8c00;
+            margin-bottom: 0.5rem;
+        }
+
+        nav {
+            margin-bottom: 2rem;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ff8c00;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 2rem;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            background: linear-gradient(135deg, #ff8c00 0%, #ff6b00 100%);
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 140, 0, 0.6);
+        }
+
+        form {
+            background: rgba(255, 140, 0, 0.05);
+            border: 1px solid rgba(255, 140, 0, 0.3);
+            border-radius: 15px;
+            padding: 2rem;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        form h2 {
+            margin-bottom: 1rem;
+            color: #ff8c00;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 0.7rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255, 140, 0, 0.5);
+            border-radius: 8px;
+            background: rgba(0,0,0,0.2);
+            color: #fff;
+        }
+
+        input[type="radio"] {
+            margin-right: 0.5rem;
+        }
+
+        .rating-group {
+            display: flex;
+            justify-content: space-between;
+            max-width: 300px;
+            margin-bottom: 1.5rem;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        .form-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            background: linear-gradient(135deg, #ff8c00 0%, #ff6b00 100%);
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 140, 0, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Feedback Form</h1>
+        <nav>
+            <a href="home.html">Home</a> |
+            <a href="about.html">About</a> |
+            <a href="contact.html">Contact</a> |
+            <a href="feedback.html">Feedback</a>
+        </nav>
+    </header>
+
+    <!-- Back to Home button -->
+    <a href="home.html" class="back-btn">← Back to Home</a>
+
+    <form action="mailto:irabatra21@gmail.com" method="post">
+        <h2>Please fill the feedback form</h2>
+
+        <label for="name">Name</label>
+        <input type="text" id="name" name="first_name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="age">Enter your age</label>
+        <input type="text" id="age" name="age" maxlength="2" size="2">
+
+        <label>Choose your gender</label>
+        <input type="radio" name="gender" value="male" id="male"><label for="male" style="display:inline">Male</label>
+        <input type="radio" name="gender" value="female" id="female"><label for="female" style="display:inline">Female</label>
+
+        <label>How would you rate our website?</label>
+        <div class="rating-group">
+            <label>1<input type="radio" name="ratings" value="1"></label>
+            <label>2<input type="radio" name="ratings" value="2"></label>
+            <label>3<input type="radio" name="ratings" value="3"></label>
+            <label>4<input type="radio" name="ratings" value="4"></label>
+            <label>5<input type="radio" name="ratings" value="5"></label>
+        </div>
+
+        <label for="remarks">Remarks</label>
+        <textarea id="remarks" name="remarks" rows="4"></textarea>
+
+        <div class="form-buttons">
+            <input type="submit" value="Submit">
+            <input type="reset" value="Clear">
+        </div>
+    </form>
+</body>
+</html>

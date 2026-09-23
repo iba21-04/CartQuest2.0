@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart Quest - Shop</title>
+  <link rel="stylesheet" href="../css/game.css">
+</head>
+<body>
+
+  <!-- Top bar: what you're cooking, clock, score, and the cart (also a drop target) -->
+  <header class="hud">
+    <a class="brand" href="home.html"><span>🛒</span> Cart Quest</a>
+
+    <div class="hud-dish">
+      <span class="emoji" id="dishEmoji"></span>
+      <div>
+        <strong id="dishName"></strong>
+        <small id="cuisineName"></small>
+      </div>
+    </div>
+
+    <div class="hud-spacer"></div>
+
+    <div class="stat"><small>Time</small><b id="timer">0:00</b></div>
+    <div class="stat"><small>Score</small><b id="score">0</b></div>
+
+    <a class="cart-btn dropzone" id="cartBtn" href="../CartPage.html" aria-label="Open your cart">
+      <span class="icon">🛒</span>
+      <span class="count" data-cart-count>0</span>
+      <span data-cart-total>$0.00</span>
+    </a>
+  </header>
+
+  <div class="layout">
+
+    <!-- The store -->
+    <main>
+      <div class="store-head">
+        <button class="pill" id="prevAisle" hidden aria-label="Previous aisle">‹ Prev</button>
+        <div>
+          <h1 id="storeTitle">Store map</h1>
+          <p id="storeSub">Pick an aisle to start shopping.</p>
+        </div>
+        <button class="pill" id="backToMap" hidden>Store map</button>
+        <button class="pill" id="nextAisle" hidden aria-label="Next aisle">Next ›</button>
+      </div>
+
+      <!-- View 1: map of the six aisles -->
+      <section id="mapView">
+        <div class="map">
+          <img src="../images/aisles.jpeg" alt="Map of the six store aisles" draggable="false">
+          <div class="map-cols" id="mapCols"></div>
+        </div>
+        <div class="aisle-chips" id="aisleChips"></div>
+        <p class="tip"><strong>How to shop:</strong> open an aisle, then <strong>drag</strong> an item into your cart (or just click it). Keys <strong>1–6</strong> jump between aisles.</p>
+      </section>
+
+      <!-- View 2: one aisle, with draggable products -->
+      <section id="aisleView" hidden>
+        <div class="stage" id="stage"></div>
+        <p class="tip">Drag a product onto the cart at the top right. Anything not on your list still goes in, but costs you points.</p>
+      </section>
+    </main>
+
+    <!-- Shopping list + cart -->
+    <aside class="side">
+      <section class="card" aria-labelledby="listTitle">
+        <h2 id="listTitle">Shopping list <small id="listCount">0 / 0</small></h2>
+        <div class="bar"><i id="listBar"></i></div>
+        <p class="note" id="dishNote" hidden></p>
+        <ul class="needs" id="needsList"></ul>
+        <label class="toggle"><input type="checkbox" id="hintsToggle"> Show which aisle each item is in</label>
+      </section>
+
+      <section class="card cart-card dropzone" id="cartPanel" aria-labelledby="cartTitle">
+        <h2 id="cartTitle">Your cart <small id="cartUnits">0 items</small></h2>
+        <div id="cartBody"></div>
+        <div class="total"><span>Subtotal</span><b data-cart-total>$0.00</b></div>
+        <a class="btn" id="checkoutBtn" href="../CartPage.html">Review cart and check out</a>
+        <button class="btn ghost-btn" id="restartBtn" type="button">Start this quest over</button>
+        <div class="links"><a href="prompt.html">Pick a different dish</a></div>
+      </section>
+    </aside>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Shown once when every ingredient is in the cart -->
+  <dialog id="doneDialog" aria-labelledby="doneTitle">
+    <div class="big" id="doneEmoji">🎉</div>
+    <h2 id="doneTitle">Recipe complete!</h2>
+    <p id="doneSub"></p>
+    <ul class="result" id="doneResult"></ul>
+    <div class="row">
+      <a class="btn" href="../CartPage.html">Go to cart and check out</a>
+      <button class="btn ghost-btn" id="keepShopping" type="button">Keep shopping</button>
+    </div>
+  </dialog>
+
+  <script src="../data/store.js"></script>
+  <script src="../data/ingredients.js"></script>
+  <script src="../js/cartquest.js"></script>
+  <script src="../js/game.js"></script>
+</body>
+</html>
